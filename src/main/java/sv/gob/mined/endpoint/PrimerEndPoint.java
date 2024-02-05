@@ -29,7 +29,8 @@ public class PrimerEndPoint {
 	 * Metodo que contiene el mensaje a ser reflejado en la respuesta personalizada.
 	 * @return Retorna una cadena "Hola Mundo"
 	 */
-	@Operation(summary="Primer Ejemplos de EndPoint - Hola Mundo", description="EndPoint ejemplo práctico del uso de la anotación GetMapping",
+	@Operation(summary="Primer Ejemplos de EndPoint - Hola Mundo", 
+			description="EndPoint ejemplo práctico del uso de la anotación GetMapping",
 			tags = "Método Put")
 	@GetMapping(path="/saludo")
 	public RespuestaServicio primerEndpoint() {
