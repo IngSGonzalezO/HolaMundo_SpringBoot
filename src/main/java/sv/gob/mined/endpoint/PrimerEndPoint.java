@@ -2,6 +2,7 @@ package sv.gob.mined.endpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import sv.gob.mined.modelo.RespuestaServicio;
  * @author Oliver González
  */
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/hola-mundo")
 @Tag(name = "Hola Mundo", description = "Hola Mundo API")
 public class PrimerEndPoint {
@@ -30,8 +32,7 @@ public class PrimerEndPoint {
 	 * @return Retorna una cadena "Hola Mundo"
 	 */
 	@Operation(summary="Primer Ejemplos de EndPoint - Hola Mundo", 
-			description="EndPoint ejemplo práctico del uso de la anotación GetMapping",
-			tags = "Método Put")
+			description="EndPoint ejemplo práctico del uso de la anotación GetMapping")
 	@GetMapping(path="/saludo")
 	public RespuestaServicio primerEndpoint() {
 		return holaServicio.holaMundo();
