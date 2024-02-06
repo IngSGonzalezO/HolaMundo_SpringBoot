@@ -27,11 +27,7 @@ public class OpenAPIConfig {
    */
   @Bean
   OpenAPI myOpenAPI() {
-    Server desServidor = new Server();
-    desServidor.setUrl(desUrl);
-    desServidor.setDescription("URL del servidor de desarrollo");
-
-
+    
     License mitLicense = new License().name("Hola Mundo");
 
     Info info = new Info()
@@ -40,6 +36,6 @@ public class OpenAPIConfig {
         .description("API con el mensaje de Hola Mundo.")
         .license(mitLicense);
 
-    return new OpenAPI().info(info).servers(List.of(desServidor));
+    return new OpenAPI().info(info);
   }
 }
